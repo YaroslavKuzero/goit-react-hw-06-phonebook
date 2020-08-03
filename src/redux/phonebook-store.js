@@ -1,9 +1,9 @@
-import { createStore } from 'redux';
-import { composeWithDevTools } from 'redux-devtools-extension';
+import { configureStore } from '@reduxjs/toolkit';
 import contactReducer from './phonebook-reducers';
 
-const rootReducer = contactReducer;
-
-const store = createStore(rootReducer, composeWithDevTools());
+const store = configureStore({
+  reducer: contactReducer,
+  devTools: process.env.NODE_ENV === 'development',
+});
 
 export default store;

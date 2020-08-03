@@ -18,6 +18,11 @@ class Form extends Component {
 
   addContactHandler = (event) => {
     event.preventDefault()
+    if (this.props.contacts.find(contact => contact.name.toLowerCase() === this.state.name.toLowerCase())) {
+      alert(`${this.state.name} already in your contact list`)
+      return;
+    }
+
     this.props.onSubmit(this.state)
     this.resetInputs()
   };
@@ -50,4 +55,8 @@ const mapDispatchToProps = (dispatch) => ({
   onSubmit: data => dispatch(contactAction.addContact(data)),
 })
 
-export default connect(null, mapDispatchToProps)(Form);
+const mapStateToProps = (state) => ({
+  contacts: state.contacts,
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Form);

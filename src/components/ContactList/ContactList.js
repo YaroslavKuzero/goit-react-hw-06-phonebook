@@ -24,7 +24,6 @@ const getFilteredContacts = (items, filter) => {
 
 const mapStateToProps = (state) => ({
   renderItems: getFilteredContacts(state.contacts, state.filter)
-
 })
 
 const mapDispatchToProps = dispatch => ({
