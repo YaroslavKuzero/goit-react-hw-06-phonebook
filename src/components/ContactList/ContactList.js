@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import styles from './ContactList.module.css';
 import contactActions from '../../redux/phonebook-actions';
 
@@ -14,6 +15,11 @@ const ContactList = ({ renderItems, handler }) => (
     </ul>
   </>
 );
+
+ContactList.propTypes = {
+  renderItems: PropTypes.array.isRequired,
+  handler: PropTypes.func.isRequired,
+}
 
 const getFilteredContacts = (items, filter) => {
 

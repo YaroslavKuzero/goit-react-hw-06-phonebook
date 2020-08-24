@@ -8,7 +8,6 @@ const initialState = {
   number: ''
 }
 
-
 class Form extends Component {
 
   state = {
@@ -49,6 +48,10 @@ class Form extends Component {
       </form>
     )
   }
+}
+
+Form.PropTypes = {
+  onSubmit: PropTypes.func.isRequired
 }
 
 const mapDispatchToProps = (dispatch) => ({
