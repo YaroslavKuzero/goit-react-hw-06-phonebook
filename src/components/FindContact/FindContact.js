@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import contactActions from '../../redux/phonebook-actions';
 import styles from './FindContact.module.css';
 

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import contactAction from '../../redux/phonebook-actions';
 import styles from './Form.module.css';
 
@@ -9,6 +10,10 @@ const initialState = {
 }
 
 class Form extends Component {
+
+  static propTypes = {
+    onSubmit: PropTypes.func.isRequired
+  }
 
   state = {
     name: '',
@@ -48,10 +53,6 @@ class Form extends Component {
       </form>
     )
   }
-}
-
-Form.PropTypes = {
-  onSubmit: PropTypes.func.isRequired
 }
 
 const mapDispatchToProps = (dispatch) => ({
