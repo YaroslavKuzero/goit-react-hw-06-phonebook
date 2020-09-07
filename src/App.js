@@ -1,6 +1,8 @@
 import React, { Fragment } from 'react';
-import './css/body.css';
+
 import Phonebook from './components';
+
+import './css/body.css';
 
 function App() {
   return (

@@ -1,12 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+
 import contactActions from '../../redux/phonebook-actions';
-import styles from './FindContact.module.css';
+
+import s from './FindContact.module.css';
 
 const Filter = ({ value, onChange }) => (
   <label>
-    <input className={styles.find_contact} type='text' placeholder='Find contact by name' value={value} onChange={onChange}></input>
+    <input className={s.find_contact} type='text' placeholder='Find contact by name' value={value} onChange={onChange}></input>
   </label>
 );
 
@@ -15,8 +17,8 @@ Filter.propTypes = {
   onChange: PropTypes.func.isRequired,
 }
 
-const mapStateToProps = (state) => ({
-  value: state.filter,
+const mapStateToProps = ({ filter }) => ({
+  value: filter,
 })
 
 const mapDispatchToProps = dispatch => ({
